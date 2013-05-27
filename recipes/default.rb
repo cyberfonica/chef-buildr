@@ -24,9 +24,9 @@ include_recipe 'java::set_java_home'
 pkgs = []
 
 case node.platform
-when "debian"
-	pkgs = ["ruby-full", "ruby1.8-dev", "libopenssl-ruby", "rubygems"]
-when "rhel", "fedora"
+when "debian", "ubuntu"
+	pkgs = ["ruby-full", "ruby-dev", "libopenssl-ruby", "rubygems"]
+when "rhel", "fedora", "centos", "amazon", "scientific"
 	pkgs = ["ruby", "rubygems", "ruby-devel"]
 end
 
